@@ -15,4 +15,7 @@ class User < ApplicationRecord
     validates :gender_id
   end
 
+
+  has_many :things
+
 end
