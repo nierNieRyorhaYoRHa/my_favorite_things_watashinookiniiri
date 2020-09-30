@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @things.each do |thing| %>
+    <div class="content_post" >
+      <p><%= thing.explanation %></p>
+      <span class="name">
+        <%= thing.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
