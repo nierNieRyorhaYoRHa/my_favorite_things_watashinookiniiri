@@ -1,6 +1,8 @@
 class ThingsController < ApplicationController
+  before_action :set_thing, only: [:edit, :show]
+
   def index
-    @things = Thing.all
+    @things = Thing.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -16,8 +18,22 @@ class ThingsController < ApplicationController
     end
   end
 
+
+  def destroy
+    thing = Thing.find(params[:id])
+    thing.destroy
+    redirect_to root_path
+  end
+
+
+  private
+
   def thing_params
     params.require(:thing).permit(:name, :explanation, :score, :date, :price, :image).merge(user_id: current_user.id)
+  end
+
+  def set_thing
+    @thing = Thing.find(params[:id])
   end
 
 end
