@@ -13,7 +13,7 @@
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
-  padding: 10vh 15vw;
+  padding: 10vh 15vw 3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
