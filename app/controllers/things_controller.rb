@@ -18,13 +18,20 @@ class ThingsController < ApplicationController
     end
   end
 
-
   def destroy
     thing = Thing.find(params[:id])
     thing.destroy
     redirect_to root_path
   end
 
+  def update
+    @thing = Thing.find(params[:id])
+    if @thing.update(thing_params)
+      redirect_to root_path(@thing)
+    else
+      render :edit
+    end
+  end
 
   private
 

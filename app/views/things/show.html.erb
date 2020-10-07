@@ -13,23 +13,10 @@
       <span class="item-price">
         <%= @thing.name %>
       </span>
-      <span class="item-postage">
-        (税込) 送料込み
-      </span>
     </div>
 
-    <%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-
-    <% if user_signed_in? && current_user.id == @thing.user_id %>
-      <%= link_to '商品の編集', edit_thing_path, method: :get, class: "item-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', thing_path, method: :delete, class:'item-destroy' %>
-    <% end %>
-
-    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
-
     <div class="item-explain-box">
-      <span><%= "商品説明" %></span>
+      <span><%= @thing.explanation %></span>
     </div>
     <table class="detail-table">
       <tbody>
@@ -61,8 +48,17 @@
         <span>不適切な商品の通報</span>
       </div>
     </div>
+<%# ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
+<br><br>
+    <% if user_signed_in? && current_user.id == @thing.user_id %>
+      <%= link_to '商品の編集', edit_thing_path, method: :get, class: "item-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', thing_path, method: :delete, class:'item-destroy' %>
+    <% end %>
+    <%# //ログインしていて、なおかつ、ログインしているユーザと出品しているユーザが同一人物でないとき表示しましょう。 %>
   </div>
   <%# /商品の概要 %>
+
 
   <div class="comment-box">
     <form>
