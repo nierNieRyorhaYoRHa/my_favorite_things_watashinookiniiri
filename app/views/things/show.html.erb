@@ -22,7 +22,7 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @thing.user.nickname %></td>
+          <td class="detail-value"><a href="/users/<%= @thing.user.id %>"><%= @thing.user.nickname %></a></td>
         </tr>
         <tr>
           <th class="detail-item">価格</th>
