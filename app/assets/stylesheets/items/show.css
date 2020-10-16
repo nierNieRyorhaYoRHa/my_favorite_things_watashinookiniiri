@@ -33,6 +33,19 @@
   object-fit: contain;
 }
 
+.contents-row2 {
+  position: relative;
+}
+
+.things-box {
+
+}
+.item-box-img2 {
+  /* height: 25vh;
+  width: 25vw; */
+  min-height: 50px;
+}
+
 .item-price-box {
   margin: 25px 0px;
   display: flex;
