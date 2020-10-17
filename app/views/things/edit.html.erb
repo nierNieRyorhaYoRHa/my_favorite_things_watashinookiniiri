@@ -1,31 +1,35 @@
-<%# cssは商品出品のものを併用しています。
-app/assets/stylesheets/items/new.css %>
-
 <div class="items-sell-contents">
   <header class="items-sell-header">
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model:@thing, local: true do |f| %>
+    <%= form_with model: @thing, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
+    <% render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+
     <%# 出品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
-        出品画像
-        <span class="indispensable">必須</span>
+        出品中画像
       </div>
         <%= image_tag @thing.image, class: 'images', width:600 %>
-
+    </div>
+    <%# /出品画像 %>
+    <%# 出品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像の変更
+      </div>
       <div class="click-upload">
         <p>
-          クリックしてファイルをアップロード
+          クリックして画像を変更
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"thing-image" %>
       </div>
+      <div id="image-list"></div>
     </div>
     <%# /出品画像 %>
     <%# 商品名と商品説明 %>
@@ -34,27 +38,27 @@ app/assets/stylesheets/items/new.css %>
         名前
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"form-control", id:"item-name", placeholder:"お気に入りの物の名前を教えて下さい！（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"form-control", id:"thing-name", placeholder:"お気に入りの物の名前を教えて下さい！（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           紹介
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :explanation, class:"items-text", id:"item-info", placeholder:"お気に入りの物の紹介（必須 1,000文字まで）どうしてお気に入りなのか、思い出や便利な点などを教えてください！" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :explanation, class:"items-text", id:"thing-info", placeholder:"お気に入りの物の紹介（必須 1,000文字まで）どうしてお気に入りなのか、思い出や便利な点などを教えてください！" ,rows:"7" ,maxlength:"1000" %>
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">
           価格
           <span class="indispensable">必須(半角数字)</span>
         </div>
-      <%= f.text_area :price, class:"form-control", id:"item-name", placeholder:"貰い物や価格がわからないものは0円にしましょう！", maxlength:"40" %>
+      <%= f.text_area :price, class:"form-control", id:"thing-name", placeholder:"貰い物や価格がわからないものは0円にしましょう！", maxlength:"40" %>
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">
           お気に入り度
           <span class="indispensable">必須(半角数字)</span>
         </div>
-      <%= f.text_area :score, class:"form-control", id:"item-name", placeholder:"どのくらいお気に入りか0-100で点数をつけてみましょう！", maxlength:"3" %>
+      <%= f.text_area :score, class:"form-control", id:"thing-name", placeholder:"どのくらいお気に入りか0-100で点数をつけてみましょう！", maxlength:"3" %>
       </div>
         <div class="items-explain">
     <div class='form-text-wrap'>
