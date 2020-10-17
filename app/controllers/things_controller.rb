@@ -24,6 +24,10 @@ class ThingsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @thing = Thing.find(params[:id])
+  end
+
   def update
     @thing = Thing.find(params[:id])
     if @thing.update(thing_params)

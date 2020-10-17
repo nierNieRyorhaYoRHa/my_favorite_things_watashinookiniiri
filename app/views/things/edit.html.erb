@@ -15,7 +15,7 @@
       <div class="weight-bold-text">
         出品中画像
       </div>
-        <%= image_tag @thing.image, class: 'images', width:600 %>
+        <%= image_tag @thing.image, class: 'image', width:600 %>
     </div>
     <%# /出品画像 %>
     <%# 出品画像 %>
@@ -23,13 +23,13 @@
       <div class="weight-bold-text">
         画像の変更
       </div>
+      <div id="image-list"></div>
       <div class="click-upload">
         <p>
           クリックして画像を変更
         </p>
         <%= f.file_field :image, id:"thing-image" %>
       </div>
-      <div id="image-list"></div>
     </div>
     <%# /出品画像 %>
     <%# 商品名と商品説明 %>

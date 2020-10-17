@@ -1,7 +1,5 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+if (document.URL.match( /new/ ) || document.URL.match( /things/ )) {
   document.addEventListener('DOMContentLoaded', function(){
-    console.log(123);
-
     const ImageList = document.getElementById('image-list');
 
         // 選択した画像を表示する関数
