@@ -18,6 +18,11 @@ class ThingsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @thing.comments.includes(:user).order('created_at DESC')
+  end
+
   def destroy
     thing = Thing.find(params[:id])
     thing.destroy
