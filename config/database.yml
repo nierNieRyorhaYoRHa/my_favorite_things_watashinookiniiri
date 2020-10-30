@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: my_favorite_things_watashinookiniiri_production
-  username: my_favorite_things_watashinookiniiri
-  password: <%= ENV['MY_FAVORITE_THINGS_WATASHINOOKINIIRI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
