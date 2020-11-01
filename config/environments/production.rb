@@ -42,7 +42,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.action_cable.allowed_request_origins = [ /http:\/\/.*/ ]
+  # config.action_cable.allowed_request_origins = [ /http:\/\/.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -110,4 +110,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = 'ws://176.34.19.211/cable'
+  config.action_cable.allowed_request_origins = [ 'http://176.34.19.211/' ]
 end
