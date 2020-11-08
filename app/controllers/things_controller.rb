@@ -42,6 +42,12 @@ class ThingsController < ApplicationController
     end
   end
 
+  def search
+    return nil if params[:input] == ''
+    tag = Tag.where(['tagname LIKE ?', "%#{params[:input]}%"])
+    render json: { keyword: tag }
+  end
+
   private
 
   def thing_params

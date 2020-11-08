@@ -39,11 +39,13 @@
         </div>
         <%= f.text_area :explanation, class:"items-text", id:"thing-info", placeholder:"お気に入りの物の紹介（必須 1,000文字まで）どうしてお気に入りなのか、思い出や便利な点などを教えてください！" ,rows:"7" ,maxlength:"1000" %>
       </div>
-            <div class="items-explain">
+      <div class="items-explain">
         <div class="weight-bold-text">
-          ブランドタグ
+          タグ
         </div>
         <%= f.text_field :tagname, class:"items-text", id:"tag-field", placeholder:"タグをつけることが出来ます。" %>
+      </div>
+      <div id="search-result">
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">

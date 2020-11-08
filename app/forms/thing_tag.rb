@@ -13,14 +13,20 @@ class ThingTag
   end
 
   def save
-    thing = Thing.create(
+    return false if invalid?
+
+    thing = Thing.new(
       name: name, 
       explanation: explanation, 
       score: score, 
       date: date, 
       price: price, 
       user_id: user_id, 
-      image: image)
+      image: image
+    )
+
+    thing.save
+
     tag = Tag.where(tagname: tagname).first_or_initialize
     tag.save
     ThingTagRelation.create(thing_id: thing.id, tag_id: tag.id)
