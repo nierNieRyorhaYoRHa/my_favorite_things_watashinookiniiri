@@ -6,11 +6,11 @@ class ThingsController < ApplicationController
   end
 
   def new
-    @thing = Thing.new
+    @thing = ThingTag.new
   end
 
   def create
-    @thing =  Thing.new(thing_params)
+    @thing =  ThingTag.new(thing_params)
     if @thing.save
       redirect_to root_path(@thing)
     else
@@ -45,7 +45,7 @@ class ThingsController < ApplicationController
   private
 
   def thing_params
-    params.require(:thing).permit(:name, :explanation, :score, :date, :price, :image).merge(user_id: current_user.id)
+    params.require(:thing_tag).permit(:name, :explanation, :score, :date, :price, :tagname, :image).merge(user_id: current_user.id)
   end
 
   def set_thing
