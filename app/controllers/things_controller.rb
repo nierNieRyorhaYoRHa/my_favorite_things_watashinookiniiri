@@ -30,15 +30,17 @@ class ThingsController < ApplicationController
   end
 
   def edit
+    @things = ThingTag.new
     @thing = Thing.find(params[:id])
   end
 
   def update
-    @thing = Thing.find(params[:id])
+    @thing =  ThingTag.new(thing_params)
+    @thing.thing_id = params[:id]
     if @thing.update(thing_params)
       redirect_to root_path(@thing)
     else
-      render :edit
+      redirect_to edit_thing_path(params[:id])
     end
   end
 

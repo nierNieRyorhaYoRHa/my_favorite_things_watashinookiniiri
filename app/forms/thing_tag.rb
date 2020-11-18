@@ -32,4 +32,26 @@ class ThingTag
     ThingTagRelation.create(thing_id: thing.id, tag_id: tag.id)
   end
 
+  def find
+    @thing = Thing.find(params[:id])
+  end
+
+  def update (thing_params)
+    return false if invalid?
+    thing = Thing.find(thing_id)
+
+    thing.name = name
+    thing.explanation = explanation
+    thing.score = score
+    thing.date = date
+    thing.price = price
+    thing.image = image
+
+    thing.save
+    
+    tag = Tag.where(tagname: tagname).first_or_initialize
+    tag.save
+    ThingTagRelation.create(thing_id: thing.id, tag_id: tag.id)
+  end
+
 end
