@@ -6,11 +6,11 @@ class ThingsController < ApplicationController
   end
 
   def new
-    @thing = Thing.new
+    @thing = ThingTag.new
   end
 
   def create
-    @thing =  Thing.new(thing_params)
+    @thing =  ThingTag.new(thing_params)
     if @thing.save
       redirect_to root_path(@thing)
     else
@@ -30,22 +30,30 @@ class ThingsController < ApplicationController
   end
 
   def edit
+    @things = ThingTag.new
     @thing = Thing.find(params[:id])
   end
 
   def update
-    @thing = Thing.find(params[:id])
+    @thing =  ThingTag.new(thing_params)
+    @thing.thing_id = params[:id]
     if @thing.update(thing_params)
       redirect_to root_path(@thing)
     else
-      render :edit
+      redirect_to edit_thing_path(params[:id])
     end
+  end
+
+  def search
+    return nil if params[:input] == ''
+    tag = Tag.where(['tagname LIKE ?', "%#{params[:input]}%"])
+    render json: { keyword: tag }
   end
 
   private
 
   def thing_params
-    params.require(:thing).permit(:name, :explanation, :score, :date, :price, :image).merge(user_id: current_user.id)
+    params.require(:thing_tag).permit(:name, :explanation, :score, :date, :price, :tagname, :image).merge(user_id: current_user.id)
   end
 
   def set_thing

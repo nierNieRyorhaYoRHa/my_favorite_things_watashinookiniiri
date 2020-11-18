@@ -16,8 +16,8 @@
 }
 
 .furima-icon {
-  width: 10vw;
-  margin-right: 10vw;
+  width: 22vw;
+  margin-right: 3vw;
 }
 
 .search-form {
@@ -37,7 +37,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: rgb(133, 128, 117);
   padding: 8px;
 }
 

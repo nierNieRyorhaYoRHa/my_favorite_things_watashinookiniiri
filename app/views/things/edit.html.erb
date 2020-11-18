@@ -3,11 +3,11 @@
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
   </header>
   <div class="items-sell-main">
-    <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with model: @thing, local: true do |f| %>
+    <h2 class="items-sell-title">編集</h2>
+    <%= form_with model: @things, url: thing_path, method: :put, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <% render 'shared/error_messages', model: f.object %>
+    <%# render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# 出品画像 %>
@@ -28,7 +28,7 @@
         <p>
           クリックして画像を変更
         </p>
-        <%= f.file_field :image, id:"thing-image" %>
+        <%= f.file_field :image, id:"thing-image", value:@thing.image %>
       </div>
     </div>
     <%# /出品画像 %>
@@ -38,27 +38,35 @@
         名前
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"form-control", id:"thing-name", placeholder:"お気に入りの物の名前を教えて下さい！（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :name, class:"form-control", id:"thing-name", value:@thing.name, placeholder:"お気に入りの物の名前を教えて下さい！（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           紹介
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :explanation, class:"items-text", id:"thing-info", placeholder:"お気に入りの物の紹介（必須 1,000文字まで）どうしてお気に入りなのか、思い出や便利な点などを教えてください！" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :explanation, class:"items-text", id:"thing-info", value:@thing.explanation, placeholder:"お気に入りの物の紹介（必須 1,000文字まで）どうしてお気に入りなのか、思い出や便利な点などを教えてください！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          タグ
+        </div>
+        <%= f.text_field :tagname, class:"items-text", id:"tag-field", value:@thing.tags[0].tagname, placeholder:"タグをつけることが出来ます。" %>
+      </div>
+      <div id="search-result">
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">
           価格
           <span class="indispensable">必須(半角数字)</span>
         </div>
-      <%= f.text_area :price, class:"form-control", id:"thing-name", placeholder:"貰い物や価格がわからないものは0円にしましょう！", maxlength:"40" %>
+      <%= f.text_field :price, class:"items-text", id:"thing-name", value:@thing.price, placeholder:"貰い物や価格がわからないものは0円にしましょう！", maxlength:"40" %>
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">
           お気に入り度
           <span class="indispensable">必須(半角数字)</span>
         </div>
-      <%= f.text_area :score, class:"form-control", id:"thing-name", placeholder:"どのくらいお気に入りか0-100で点数をつけてみましょう！", maxlength:"3" %>
+      <%= f.text_field :score, class:"items-text", id:"thing-name", value:@thing.score, placeholder:"どのくらいお気に入りか0-100で点数をつけてみましょう！", maxlength:"3" %>
       </div>
         <div class="items-explain">
     <div class='form-text-wrap'>
@@ -71,8 +79,9 @@
                     :date,
                     class:'select-birth',
                     id:"birth-date",
+                    default: @thing.date,
                     use_month_numbers: true,
-                    prompt:'--',
+                    # prompt:'--',
                     start_year: 1930,
                     end_year: (Time.now.year - 0),
                     discard_day:true,
