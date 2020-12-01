@@ -15,6 +15,7 @@
     <%= flash[:alert] %>
   </div>
   <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+<%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%>
 
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -30,6 +31,11 @@
     </div>
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
+
+  <%if @sns_id.present? %>
+    <%= hidden_field_tag :sns_auth, true %>
+  <% else %>
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">パスワード</label>
@@ -45,6 +51,9 @@
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
+
+  <% end %>
+
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">性別</label>
