@@ -1,3 +1,4 @@
+<%= render "shared/header" %>
 <%= render "shared/second-header"%>
 
 <%= form_with class: 'registration-main', model: @user , url: edit_user_path(@user.id), method: :get, local: true do |f| %>

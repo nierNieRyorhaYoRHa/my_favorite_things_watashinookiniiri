@@ -8,6 +8,7 @@
   right: 32px;
   position: fixed;
   padding: 15px;
+  border-radius: 30px
 }
 
 .purchase-btn-text {

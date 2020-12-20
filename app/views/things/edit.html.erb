@@ -1,13 +1,14 @@
+<%= render "shared/header" %>
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '370x100'), "/" %>
+    <%#= link_to image_tag('furima-logo-color.png' , size: '370x100'), "/" %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">編集</h2>
     <%= form_with model: @things, url: thing_path, method: :put, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
+    <% render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# 出品画像 %>
