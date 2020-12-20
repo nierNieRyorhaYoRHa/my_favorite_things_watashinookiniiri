@@ -9,7 +9,7 @@ class ThingTag
     validates :explanation
     validates :price
     validates :score
-    validates :date
+    # validates :date
   end
 
   def save
@@ -45,7 +45,9 @@ class ThingTag
     thing.score = score
     thing.date = date
     thing.price = price
-    thing.image = image
+    if image != nil
+      thing.image = image
+    end
 
     thing.save
     

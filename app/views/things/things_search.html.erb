@@ -1,0 +1,59 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      My Favorite Things
+    </h2>
+    <p class='service-explain'>
+      〜私のお気に入り〜
+    </p>
+    <p class='service-explain'>
+      
+    </p>
+
+  </div>
+  <%# //画面上部の「人生を変えるフリマアプリ」帯部分  %>
+
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>「<%=params[:keyword]%>」の検索結果</h2>
+    <%= link_to '新規投稿する', new_thing_path, class: "subtitle" %>
+    <ul class='item-lists'>
+
+    <% @things.each do |thing| %>
+      <li class='list'>
+        <%= link_to thing_path(thing.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag thing.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= thing.name %>
+          </h3>
+          <div class='item-price'>
+            <span><%= thing.price %>円<br></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'><%= thing.score %></span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+
+    </ul>
+  </div>
+  <%# //商品一覧 %>
+
+</div>
+<%= link_to new_thing_path do %>
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>出品する</span>
+    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </div>
+<% end %>
+<%= render "shared/footer" %>

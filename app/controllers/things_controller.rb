@@ -35,6 +35,7 @@ class ThingsController < ApplicationController
   end
 
   def update
+    binding.pry
     @thing =  ThingTag.new(thing_params)
     @thing.thing_id = params[:id]
     if @thing.update(thing_params)
@@ -48,6 +49,10 @@ class ThingsController < ApplicationController
     return nil if params[:input] == ''
     tag = Tag.where(['tagname LIKE ?', "%#{params[:input]}%"])
     render json: { keyword: tag }
+  end
+
+  def things_search
+    @things = Thing.search(params[:keyword]).includes(:user).order('created_at DESC')
   end
 
   private
