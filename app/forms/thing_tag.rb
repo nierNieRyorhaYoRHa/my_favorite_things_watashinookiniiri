@@ -9,7 +9,7 @@ class ThingTag
     validates :explanation
     validates :price
     validates :score
-    # validates :date
+    validates :date
   end
 
   def save
@@ -24,6 +24,10 @@ class ThingTag
       user_id: user_id, 
       image: image
     )
+
+    if date == ""
+      return false
+    end
 
     thing.save
 
