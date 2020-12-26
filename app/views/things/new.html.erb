@@ -7,7 +7,7 @@
     <%= form_with model: @thing, url: things_path, local: true do |f| %>
 
     <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <% render 'shared/error_messages', model: f.object %>
+    <%# render 'shared/error_messages', model: f.object %>
     <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
     <%# 画像 %>
@@ -74,11 +74,12 @@
                     id:"birth-date",
                     use_month_numbers: true,
                     prompt:'--',
+                    default: Date.new(2020, 1, 1), # 最初に表示されている年月日
                     start_year: 1930,
                     end_year: (Time.now.year - 0),
-                    discard_day:true,
+                    # discard_day:true,
                     date_separator: '%s'),
-                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 月 </p>" %>
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
     
   </div>
