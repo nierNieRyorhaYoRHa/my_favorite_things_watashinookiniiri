@@ -37,7 +37,7 @@ class ThingTag
   end
 
   def update (thing_params)
-    return false if invalid?
+    # return false if invalid?
     thing = Thing.find(thing_id)
 
     thing.name = name
@@ -47,6 +47,23 @@ class ThingTag
     thing.price = price
     if image != nil
       thing.image = image
+    end
+
+
+    if name == ""
+      return false
+    end
+    if explanation == ""
+      return false
+    end
+    if score == ""
+      return false
+    end
+    if date == ""
+      return false
+    end
+    if price == ""
+      return false
     end
 
     thing.save
