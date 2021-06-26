@@ -9,18 +9,14 @@
     <p class='service-explain'>
       〜私のお気に入り〜
     </p>
-    <p class='service-explain'>
-      
-    </p>
-
   </div>
   <%# //帯部分  %>
 
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>投稿一覧</h2>
-    <%= link_to '新規投稿する', new_thing_path, class: "subtitle" %>
+    <h2 class='title'>みんなのお気に入り一覧</h2>
+    <%= link_to 'あなたも投稿してみよう！', new_thing_path, class: "subtitle" %>
     <ul class='item-lists'>
 
     <% @things.each do |thing| %>
@@ -73,7 +69,7 @@
 </div>
 <%= link_to new_thing_path do %>
   <div class='purchase-btn'>
-    <span class='purchase-btn-text'>出品する</span>
+    <span class='purchase-btn-text'>新規投稿</span>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </div>
 <% end %>
