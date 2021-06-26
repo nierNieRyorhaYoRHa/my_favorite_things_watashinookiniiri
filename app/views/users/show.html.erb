@@ -1,5 +1,4 @@
 <%= render "shared/header" %>
-<%= render "shared/second-header"%>
 
 <%= form_with class: 'registration-main', model: @user , url: edit_user_path(@user.id), method: :get, local: true do |f| %>
 <div class='form-wrap'>
@@ -49,7 +48,7 @@
 
   <div class='form-header'>
     <h3 class='form-header-text'>
-      投稿一覧
+      お気に入り一覧
     </h3>
   </div>
 
@@ -79,5 +78,5 @@
 
 
 
-<%= render "shared/second-footer"%>
+<%= render "shared/footer"%>
 
