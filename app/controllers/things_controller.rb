@@ -1,5 +1,6 @@
 class ThingsController < ApplicationController
   before_action :set_thing, only: [:edit, :show]
+  before_action :move_to_sign_in, except: [:index, :show, :search, :things_search]
 
   def index
     @things = Thing.includes(:user).order('created_at DESC')
@@ -55,6 +56,10 @@ class ThingsController < ApplicationController
   end
 
   private
+
+  def move_to_sign_in
+    redirect_to user_session_path unless user_signed_in?
+  end
 
   def thing_params
     params.require(:thing_tag).permit(:name, :explanation, :score, :date, :price, :tagname, :image).merge(user_id: current_user.id)
