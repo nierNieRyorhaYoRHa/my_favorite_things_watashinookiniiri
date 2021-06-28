@@ -5,11 +5,6 @@
     <h2 class="items-sell-title">お気に入りを投稿しよう！</h2>
     <%= form_with model: @thing, url: things_path, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <%# render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-
-    <%# 画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         画像
@@ -23,8 +18,7 @@
         <%= f.file_field :image, id:"thing-image" %>
       </div>
     </div>
-    <%# /出品画像 %>
-    <%# 商品名と商品説明 %>
+
     <div class="new-items">
       <div class="weight-bold-text">
         名前
@@ -80,19 +74,12 @@
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
-    
   </div>
     </div>
-    <%# /商品名と商品説明 %>
-
-
-
-    <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "出品する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-    <%# /下部ボタン %>
   </div>
   <% end %>
 </div>
