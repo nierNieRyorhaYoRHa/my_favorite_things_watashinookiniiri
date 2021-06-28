@@ -22,6 +22,8 @@ class ThingsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @thing.comments.includes(:user).order('created_at DESC')
+    @tagid = ThingTagRelation.find_by(thing_id: @thing.id)
+    @tag = Tag.find_by(id: @tagid.tag_id)
   end
 
   def destroy
