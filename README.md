@@ -1,13 +1,26 @@
 # my_favorite_things_watashinookiniiri
 
-"my_favorite_things_watashinookiniiri" is an application that introduces users' favorite things with Ruby and Rails.
+"my_favorite_things_watashinookiniiri" is an application that introduces user's favorite things with Ruby and Rails.
 
 
 # Requirement
 
-* Ruby   2.6.5
-* Rails  6.0.0
-* mysql2 0.5.3
+* Ruby 2.6.5
+* Ruby on Rails 6.0.0
+* MySQL2 0.5.3
+* JavaScript
+* Nginx 1
+* Puma 3.11 (local)
+* Unicorn 5.4.1 (EC2)
+* AWS
+ * EC2
+ * S3
+ * Route 53
+ * VPC
+ * RDS
+* Capistrano3
+* RSpec
+* GoogleAPI
 
 
 # Table design
