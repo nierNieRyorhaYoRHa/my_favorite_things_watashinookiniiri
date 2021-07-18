@@ -13,11 +13,11 @@
 * Puma 3.11 (local)
 * Unicorn 5.4.1 (EC2)
 * AWS
- * EC2
- * S3
- * Route 53
- * VPC
- * RDS
+  * EC2
+  * S3
+  * Route 53
+  * VPC
+  * RDS
 * Capistrano3
 * RSpec
 * GoogleAPI
