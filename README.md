@@ -22,7 +22,7 @@
 * RSpec
 * GoogleAPI
 
-![](./image.drawio.svg)
+<!-- ![](./image.drawio.svg) -->
 
 # Table design
 ## users table
