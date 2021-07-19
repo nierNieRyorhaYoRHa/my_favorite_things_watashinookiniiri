@@ -1,5 +1,5 @@
 class ThingsController < ApplicationController
-  before_action :set_thing, only: [:edit, :show]
+  before_action :set_thing, only: [:edit, :show, :destroy]
   before_action :move_to_sign_in, except: [:index, :show, :search, :things_search]
 
   def index
@@ -27,8 +27,9 @@ class ThingsController < ApplicationController
   end
 
   def destroy
-    thing = Thing.find(params[:id])
-    thing.destroy
+    @tagid = ThingTagRelation.find_by(thing_id: @thing.id)
+    @tagid.destroy
+    @thing.destroy
     redirect_to root_path
   end
 
