@@ -1,10 +1,22 @@
 # my_favorite_things_watashinookiniiri
+"my_favorite_things_watashinookiniiri" is an application where users introduce each other's favorite things.
 
-"my_favorite_things_watashinookiniiri" is an application that introduces user's favorite things with Ruby and Rails.
+https://my-favorite-things-watashinookiniiri.tk/
+
+Rankings and reviews of things are popular in various media, and I often see them.
+I thought it would be fascinating if many people could easily find out what they liked.
+
+## Function
+* User registration (anyone)
+* Item registration (users only)
+  * Tagging (users only)
+* Comments (users only)
+* Item / User Search (anyone)
+* Browsing items (anyone)
+* Browsing user (anyone)
 
 
-# Requirement
-
+# Dependency
 * Ruby 2.6.5
 * Ruby on Rails 6.0.0
 * MySQL2 0.5.3
@@ -20,9 +32,14 @@
   * RDS
 * Capistrano3
 * RSpec
-* GoogleAPI
 
 ![](./image.drawio.svg)
+
+# Test
+* RSpec
+  * models
+  * requests
+  * features
 
 # Table design
 ## users table
