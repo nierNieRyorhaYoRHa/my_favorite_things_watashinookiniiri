@@ -8,7 +8,9 @@
     </h1>
   </div>
 
+  <% if Rails.env.development? %>
   <%= link_to 'Googleでログイン！', user_google_oauth2_omniauth_authorize_path, method: :post%>
+  <% end %>
 
   <div class='login-flash-message'>
     <%= flash[:notice] %>
