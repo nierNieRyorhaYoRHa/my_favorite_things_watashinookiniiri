@@ -4,7 +4,8 @@
 <div class="item-show">
   <div class="item-box">
     <h1 class="name">
-      <%= @thing.name %>
+    <a href="/users/<%= @thing.user.id %>"><%= @thing.user.nickname %>さんのお気に入り</a>
+      <%#= @thing.name %>
     </h1>
     <div class='item-img-content'>
       <%= image_tag @thing.image ,class:"item-box-img" %>
@@ -21,19 +22,19 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-item">出品者</th>
-          <td class="detail-value"><a href="/users/<%= @thing.user.id %>"><%= @thing.user.nickname %></a></td>
+          <th class="detail-item">リンク</th>
+          <td class="detail-value"><a href="/users/<%= @thing.user.id %>"><%= @thing.user.nickname %>さんのマイページ</a></td>
         </tr>
         <tr>
           <th class="detail-item">価格</th>
-          <td class="detail-value"><%= @thing.price %></td>
+          <td class="detail-value"><%= @thing.price.to_s(:delimited) %>円</td>
         </tr>
         <tr>
           <th class="detail-item">お気に入り度</th>
           <td class="detail-value"><%= @thing.score %></td>
         </tr>
         <tr>
-          <th class="detail-item">購入時期</th>
+          <th class="detail-item">出会った時期</th>
           <td class="detail-value"><%= @thing.date %></td>
         </tr>
         <tr>

@@ -1,6 +1,5 @@
 .purchase-btn {
   width: 120px;
-  /* background: rgb(133, 128, 117); */
   background: rgb(133, 128, 117);
   text-align: center;
   border-radius: 4%;
@@ -21,4 +20,37 @@
 
 .purchase-btn-icon {
   width: 60%;
+}
+
+@media (max-width: 799px) {
+
+  .purchase-btn {
+  width: 60px;
+  height: 60px;
+  background: rgb(133, 128, 117);
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: none;
+  border-radius: 30px
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 8px;
+  border: none;
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+}
+
+.purchase-btn-icon {
+  width: 30px;
+  height: 30px;
+}
+
+
 }

@@ -12,8 +12,9 @@ a:hover {
 
 .title-contents {
   width: 100vw;
+  height: 500px;
   background-image: image-url('my-header01.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -24,187 +25,40 @@ a:hover {
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   object-fit: contain;
-  padding: 30% 5% 0% 5%;
+  position: relative;
+
+  // border: solid;
+  // border-color: #031de2;
+  
+
 }
 
 .service-title {
   font-size: 4vh;
+  padding: 30% 5% 0% 5%;
+
+  position: absolute;
+  bottom: 40px;
+  margin: 0;
+  padding: 0;
+  padding-left: 5%;
+
+  // border: solid;
+  // border-color: #031de2;
 }
 
 .service-explain {
   font-size: 2.5vh;
   line-height: 40px;
-}
+  padding-left: 5%;
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}
-
-.select-reason-contents {
-  padding: 5vh 15vw;
-}
-
-.select-reason-contents>.title {
-  text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-  margin-bottom: 5vh;
-  position: relative;
-}
-
-.select-reason-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: rgb(133, 128, 117);
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  bottom: 0;
+  margin: 0;
+  padding-left: 5%;
 
-.reason-lists {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.reason-lists>.list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.list-pict {
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.reason-list-number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 60px;
-  background-color: rgb(133, 128, 117);
-  color: #fff;
-}
-
-.reason-list-text {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 50px;
-}
-
-.reason-list-blue-text {
-  color: rgb(133, 128, 117);
-}
-
-.reason-list-description {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.ad-contents {
-  width: 100vw;
-  background-image: image-url('myfavoritethings-header02.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.ad-title {
-  font-size: 5vh;
-  margin-bottom: 2vh;
-}
-
-.ad-explain {
-  font-size: 2.5vh;
-  line-height: 30px;
-}
-
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}
-
-
-.feature-contents {
-  padding: 5vh 15vw;
-}
-
-.feature-contents>.title {
-  text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-  margin-bottom: 5vh;
-  position: relative;
-}
-
-.feature-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: rgb(133, 128, 117);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.feature-lists {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.feature-lists>.list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.feature-list-text {
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 50px;
-}
-
-.feature-list-description {
-  font-size: 18px;
-  margin-top: 20px;
+  // border: solid;
+  // border-color: #031de2;
 }
 
 
@@ -238,7 +92,7 @@ a:hover {
 }
 
 .item-lists>.list {
-  width: 37vh;
+  // width: 37vh;
   padding: 1vw;
   background-color: #FFF;
 }
@@ -252,22 +106,9 @@ a:hover {
   width: 33vh;
   height: 33vh;
   border-radius:30% 0;
+  object-fit: cover;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
 
 
 .item-info {
@@ -300,4 +141,51 @@ a:hover {
 
 .star-count {
   font-size: 2vh;
+}
+
+@media (max-width: 799px) {
+
+  .service-title {
+    font-size: 3.5vh;
+    padding: 30% 5% 0% 5%;
+  
+    position: absolute;
+    bottom: 40px;
+    margin: 0;
+    padding: 0;
+    padding-left: 5%;
+  
+    // border: solid;
+    // border-color: #031de2;
+  }
+  
+  .service-explain {
+    font-size: 2vh;
+    line-height: 40px;
+    padding-left: 5%;
+  
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding-left: 5%;
+  
+    // border: solid;
+    // border-color: #031de2;
+  }
+  .item-contents>.title {
+    font-size: 3vh;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  
+  .item-contents>.subtitle {
+    font-size: 2vh;
+    margin: 1vh 0;
+    text-decoration: none;
+    color: rgb(133, 128, 117);
+    font-weight: bold;
+  }
+
+
+
 }

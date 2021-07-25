@@ -1,14 +1,14 @@
 # my_favorite_things_watashinookiniiri
-"my_favorite_things_watashinookiniiri" is an application where users introduce each other's favorite things.
+"my_favorite_things_watashinookiniiri" is an application where users introduce each other's favorite things. 
 
 https://my-favorite-things-watashinookiniiri.tk/
 
-Rankings and reviews of things are popular in various media, and I often see them.
-However, they are often buried in various other posts, which are difficult to see easily.
-So I created this application because I thought it would be appealing if many people could easily find out what they liked.
-In this application, only your favorite things are posted, so it is very easy to see.
+Rankings and reviews of content are popular in various media, and I often encounter them.
+However, they are often hidden due to various other posts, which make them difficult to notice.
+So I created this application because I thought it would be appealing if many people could easily find out what they are attracted to. 
+In this application, only your favorite things are posted, so it is very convenient to see.
 
-Would you like to know what is other people's favorite and what othre people find useful?
+Are you interested in other's favorite contents?
 
 # Function
 * User registration (anyone)
